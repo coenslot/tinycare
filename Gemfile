@@ -14,6 +14,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Adding friendly links, just to be nice
 gem 'friendly_id', '~> 5.1.0'
+# Use susy for custom layout
+gem 'susy'
 # Use font awesome for icons
 gem "font-awesome-rails"
 # Use Uglifier as compressor for JavaScript assets
