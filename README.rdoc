@@ -3,6 +3,8 @@
 Ruby version: 2.3.0
 Rails version: 5.0.0.beta3
 
+If you want you use livereload and use chrome, first install the chrome plugin.
+
 First run this command to get install gems:
 <tt>bundle install</tt>
 
