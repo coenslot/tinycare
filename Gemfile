@@ -67,6 +67,10 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'factory_girl_rails'
   gem 'faker'
+  # Guard
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'guard-rails', '~> 0.7', require: false
 end
 
 group :development do
