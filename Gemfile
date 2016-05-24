@@ -7,6 +7,8 @@ gem 'rails', '4.2.2'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma'
+# Use Haml for markup language
+gem "haml-rails", "~> 0.9"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use sqlite3 as the database for Active Record
