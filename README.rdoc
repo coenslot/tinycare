@@ -11,3 +11,6 @@ Then use this command to migrate the database:
 
 Then start the server with guard:
 <tt>bundle exec guard</tt>
+
+
+Made by Chef
