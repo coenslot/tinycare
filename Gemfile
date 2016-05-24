@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.2'
+gem 'rails', '>= 5.0.0.beta3', '< 5.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -11,8 +11,9 @@ gem 'puma'
 gem "haml-rails", "~> 0.9"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'bootstrap-sass', '~> 3.3.6'
+# Adding friendly links, just to be nice
+gem 'friendly_id', '~> 5.1.0'
 # Use font awesome for icons
 gem "font-awesome-rails"
 # Use Uglifier as compressor for JavaScript assets
@@ -38,31 +39,24 @@ gem 'jbuilder', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Alternative to IRB
-gem 'pry', '~> 0.10.3'
+# Breadcrumbs
+gem "breadcrumbs_on_rails"
+
+# Attachment integration to Projects
+gem 'paperclip'
+
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 
 # Authentication gems
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-github'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-trello'
-gem 'omniauth-fitbit-oauth2'
-gem 'fitgem_oauth2', '~>1.0.0'
-gem 'figaro'
-
-# getting the fitbit json data in beautiful charts
-gem "highcharts-rails"
-gem 'httparty'
+gem 'devise', '>= 4.0.0.rc1'
+# Devise Dutch language
+gem 'devise-i18n'
 
 gem 'rails-erd'
 
 gem 'rspec-rails'
 gem 'dotenv-rails'
-
-# trying to get the ihealth data
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -91,6 +85,13 @@ group :test do
   gem 'database_cleaner'
   gem 'simplecov'
 end
+
+# Production
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+gem 'capistrano-rvm'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
