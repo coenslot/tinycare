@@ -16,4 +16,5 @@
 #
 
 class Stakeholder < ApplicationRecord
+	belongs_to :fitbitUser
 end

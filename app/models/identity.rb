@@ -13,4 +13,5 @@
 #
 
 class Identity < ApplicationRecord
+	has_one :fitbitUser
 end

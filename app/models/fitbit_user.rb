@@ -13,4 +13,7 @@
 #
 
 class FitbitUser < ApplicationRecord
+	has_many :notifications, :stakeholders 
+	belongs_to :careGiver
+	has_one :identity
 end
