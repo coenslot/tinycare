@@ -17,4 +17,5 @@
 #
 
 class Notification < ApplicationRecord
+	belongs_to :fitbitUser
 end

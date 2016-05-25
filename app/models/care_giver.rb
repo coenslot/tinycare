@@ -15,4 +15,5 @@
 #
 
 class CareGiver < ApplicationRecord
+  has_many :fitbitUsers
 end
