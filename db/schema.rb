@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525094022) do
+ActiveRecord::Schema.define(version: 20160525135152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,10 +29,8 @@ ActiveRecord::Schema.define(version: 20160525094022) do
   end
 
   create_table "fitbit_users", force: :cascade do |t|
-    t.integer  "uid"
     t.integer  "identity"
     t.string   "password"
-    t.integer  "notification"
     t.integer  "care_giver_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -46,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160525094022) do
     t.string   "expires_at"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "uid"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -54,12 +53,9 @@ ActiveRecord::Schema.define(version: 20160525094022) do
     t.string   "data_type"
     t.string   "grafity"
     t.string   "status"
-    t.string   "document_file_name"
-    t.string   "document_content_type"
-    t.string   "document_file_size"
     t.integer  "fitbit_user_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "stakeholders", force: :cascade do |t|
@@ -70,9 +66,10 @@ ActiveRecord::Schema.define(version: 20160525094022) do
     t.string   "stakeholder"
     t.string   "email"
     t.integer  "telephone"
-    t.integer  "notification"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "adress"
+    t.string   "company_name"
   end
 
 end
