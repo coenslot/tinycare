@@ -1,5 +1,32 @@
 @import "globals/all";
+@import "susy";
 
 body{
 	font-family: $primary-font;
+	background-color: $white;
+}
+
+.left {
+	float: left;
+	text-align: left;
+}
+
+.middle {
+	text-align: center;
+}
+
+.right {
+	float: right;
+	text-align: right;
+}
+
+nav {
+	@include span(12);
+	background: $secondary-color;
+	color: $white;
+	height: 80px;
+	& .part {
+		@include span(4 of 12);
+		display: inline-block;
+	}
 }

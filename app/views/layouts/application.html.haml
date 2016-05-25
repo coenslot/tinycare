@@ -6,9 +6,16 @@
 		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 		= javascript_include_tag 'application', 'data-turbolinks-track' => true
 		= csrf_meta_tags
+		%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+
+
 	%body
-		%header
-			Hier komt de header
-			= yield
-		%footer
-			Hier komt de footer
+		%nav
+			.left.part
+				Kek logo
+			.middle.part
+				Welkom Diana!
+			.right.part
+				Uitloggen en instellingen
+		= yield
+		

@@ -10,3 +10,9 @@ $dark-gray: rgba(162, 162, 162, 100);
 
 // Define the typefaces here
 $primary-font: "TeX Gyre Adventor";
+
+$susy: (
+	columns: 12,
+	gutters: 1/4,
+	gutter-position: inside,
+);
