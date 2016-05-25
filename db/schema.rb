@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525135152) do
+ActiveRecord::Schema.define(version: 20160525143608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160525135152) do
     t.integer  "care_giver_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "email"
   end
 
   create_table "identities", force: :cascade do |t|
@@ -49,7 +50,6 @@ ActiveRecord::Schema.define(version: 20160525135152) do
 
   create_table "notifications", force: :cascade do |t|
     t.string   "warning"
-    t.integer  "fitbit_id"
     t.string   "data_type"
     t.string   "grafity"
     t.string   "status"
