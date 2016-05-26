@@ -3,10 +3,10 @@ class FitbitApiController < ApplicationController
   before_filter :authenticate_fitbit_user!
 
   def steps
-    render json: steps_data
+    render json: dashboard
   end
 
-  def steps_data
+  def dashboard
     client = current_fitbit_user.fitbit_client
     steps = Rails.cache.fetch("#{current_fitbit_user.id}-client-activity", expires_in: 30.seconds) do
       puts "#{current_fitbit_user.id}"
@@ -14,6 +14,7 @@ class FitbitApiController < ApplicationController
     end
     steps["activities-steps-intraday"]["dataset"].map { |data| data }
   end
+
 end
 
 
