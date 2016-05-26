@@ -1,0 +1,2 @@
+class FitbitApiController < ApplicationController
+end
