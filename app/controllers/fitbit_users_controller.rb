@@ -1,2 +1,3 @@
 class FitbitUsersController < ApplicationController
+
 end

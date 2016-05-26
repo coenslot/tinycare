@@ -13,7 +13,10 @@
 #  notification   :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  adress         :string
+#  company_name   :string
 #
 
 class Stakeholder < ApplicationRecord
+  belongs_to :fitbit_user
 end

@@ -5,6 +5,9 @@
 		%title Tinycare
 		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		%script{:src => "https://d3js.org/d3.v4.0.0-alpha.40.min.js"}
+		%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"}
+
 		= csrf_meta_tags
 		%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
 
@@ -18,4 +21,4 @@
 			.right.part
 				Uitloggen en instellingen
 		= yield
-		
+
