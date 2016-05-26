@@ -11,36 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525143608) do
+ActiveRecord::Schema.define(version: 20160526094800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "care_givers", force: :cascade do |t|
-    t.string   "email"
-    t.string   "first_name"
-    t.string   "insertion"
-    t.string   "last_name"
-    t.integer  "telephone"
-    t.boolean  "admin"
-    t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_care_givers_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_care_givers_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "fitbit_users", force: :cascade do |t|
-    t.integer  "identity"
-    t.string   "password"
-    t.integer  "care_giver_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "email"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_fitbit_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_fitbit_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "identities", force: :cascade do |t|
     t.integer  "fitbit_user_id"
     t.string   "provider"
-    t.string   "acces_token"
+    t.string   "access_token"
     t.string   "refresh_token"
     t.string   "expires_at"
     t.datetime "created_at",     null: false
@@ -66,6 +79,7 @@ ActiveRecord::Schema.define(version: 20160525143608) do
     t.string   "stakeholder"
     t.string   "email"
     t.integer  "telephone"
+    t.integer  "notification"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "adress"

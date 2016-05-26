@@ -50,8 +50,14 @@ gem 'paperclip'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 
+# Register/ sign-up tools for Fitbit
+gem 'omniauth'
+gem 'omniauth-fitbit-oauth2'
+gem 'fitgem_oauth2', '~>1.0.0'
+
 # Authentication gems
 gem 'devise', '>= 4.0.0.rc1'
+
 # Devise Dutch language
 gem 'devise-i18n'
 

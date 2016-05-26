@@ -13,6 +13,8 @@
 #  notification   :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  adress         :string
+#  company_name   :string
 #
 
 require 'rails_helper'

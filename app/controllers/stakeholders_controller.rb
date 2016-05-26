@@ -1,2 +1,3 @@
 class StakeholdersController < ApplicationController
+
 end
