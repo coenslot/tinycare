@@ -11,8 +11,16 @@ $dark-gray: rgba(162, 162, 162, 100);
 // Define the typefaces here
 $primary-font: "TeX Gyre Adventor";
 
+// Defining default susy settings for mobile devices
 $susy: (
-	columns: 12,
+	columns: 6,
 	gutters: 1/4,
+	gutter-position: inside,
+);
+
+// Susy settings for desktop devices
+$desktop: (
+	columns: 12,
+	gutter: 1/4,
 	gutter-position: inside,
 );
