@@ -13,12 +13,16 @@
 
 
 	%body
-		%nav
-			.left.part
-				Kek logo
-			.middle.part
-				Welkom Diana!
-			.right.part
-				Uitloggen en instellingen
-		= yield
+		.background-shape
+		= if fitbit_user_signed_in?
+			%nav
+				.left-part
+					Kek logo
+				.middle-part
+					%h2 Overzicht
+				.right-part
+					Uitloggen en instellingen
+
+		%main
+			= yield
 
