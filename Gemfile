@@ -16,6 +16,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'friendly_id', '~> 5.1.0'
 # Use susy for custom layout
 gem 'susy'
+
+gem 'breakpoint', '~> 2.5'
 # Use font awesome for icons
 gem "font-awesome-rails"
 # Use Uglifier as compressor for JavaScript assets
