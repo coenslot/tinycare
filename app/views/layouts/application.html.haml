@@ -19,6 +19,14 @@
 			.middle.part
 				Welkom Diana!
 			.right.part
-				Uitloggen en instellingen
+				= link_to "Instellingen", care_givers_settings_path
+
 		= yield
+
+	.example_class 
+		= link_to "Home zorgvrager", fitbit_api_dashboard_path 
+		= link_to "Data", fitbit_api_data_path 
+		= link_to "Notificaties", fitbit_api_notifications_path
+		= link_to "Uitloggen zorgvrager", care_givers_client_overview_path
+
 
