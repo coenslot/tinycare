@@ -1,0 +1,18 @@
+// Define all the colors here
+
+// Base colors
+$primary-color: rgba(38, 208, 170, 100);
+$secondary-color: rgba(38, 179, 208, 100);
+
+// Greyscales
+$white: rgba(255, 255, 255, 100);
+$dark-gray: rgba(162, 162, 162, 100);
+
+// Define the typefaces here
+$primary-font: "TeX Gyre Adventor";
+
+$susy: (
+	columns: 12,
+	gutters: 1/4,
+	gutter-position: inside,
+);
