@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe CareUser, :type => :model do
+RSpec.describe "omniauth_/callbacks.html.haml", :type => :view do
   pending "add some examples to (or delete) #{__FILE__}"
 end

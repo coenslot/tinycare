@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524113452) do
+ActiveRecord::Schema.define(version: 20160525143608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "care_users", force: :cascade do |t|
+  create_table "care_givers", force: :cascade do |t|
     t.string   "email"
     t.string   "first_name"
     t.string   "insertion"
@@ -29,13 +29,12 @@ ActiveRecord::Schema.define(version: 20160524113452) do
   end
 
   create_table "fitbit_users", force: :cascade do |t|
-    t.integer  "uid"
-    t.integer  "identity_id"
-    t.integer  "care_user_id"
-    t.string   "fitbit_user"
+    t.integer  "identity"
     t.string   "password"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "care_giver_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "email"
   end
 
   create_table "identities", force: :cascade do |t|
@@ -46,20 +45,17 @@ ActiveRecord::Schema.define(version: 20160524113452) do
     t.string   "expires_at"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "uid"
   end
 
   create_table "notifications", force: :cascade do |t|
     t.string   "warning"
-    t.integer  "fitbit_id"
     t.string   "data_type"
     t.string   "grafity"
     t.string   "status"
-    t.string   "document_file_name"
-    t.string   "document_content_type"
-    t.string   "document_file_size"
     t.integer  "fitbit_user_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "stakeholders", force: :cascade do |t|
@@ -70,9 +66,10 @@ ActiveRecord::Schema.define(version: 20160524113452) do
     t.string   "stakeholder"
     t.string   "email"
     t.integer  "telephone"
-    t.integer  "notification"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "adress"
+    t.string   "company_name"
   end
 
 end
