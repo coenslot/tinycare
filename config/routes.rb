@@ -2,7 +2,20 @@ Rails.application.routes.draw do
   devise_for :care_givers
   devise_for :fitbit_users, :controllers => { :omniauth_callbacks => "callbacks" }
 
-  get '/fitbit_api/dashboard', to: 'fitbit_api#dashboard'
+  #Fitbit_api
+  get '/fitbit_api/dashboard', to: 'fitbit_api#dashboard' 					#Client notification 
+  get '/fitbit_api/profile', to: 'fitbit_api#profile'						#Client profile
+  get '/fitbit_api/data', to: 'fitbit_api#data'								#All client data
+  get '/fitbit_api/notifications', to: 'fitbit_api#notifications'			#All notifications
+  get '/fitbit_api/send_notification', to: 'fitbit_api#send_notification'	#Send a notification to stakeholder
+ 
+
+  #Care_givers
+  get '/care_givers/client_overview', to: 'care_givers#client_overview'		#Client overview
+  get '/care_givers/settings', to: 'care_givers#settings' 					#Global settings
+
+
+
   match '/steps', to: 'fitbit_api#steps', via: 'get'
 
 end

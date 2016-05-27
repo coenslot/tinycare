@@ -1,0 +1,76 @@
+alle data van client hier
+
+.example_class 
+  = link_to "Maand", fitbit_api_data_path 
+  = link_to "Week", fitbit_api_data_path 
+  = link_to "Dag", fitbit_api_data_path 
+
+  :css
+    svg {
+      border-left: 1px solid gray;
+      border-bottom: 1px solid gray;
+    }
+    rect {
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      background-color: red;
+    }
+
+    rect:hover {
+      fill: #f5515f;
+    }
+  :javascript
+    // Vaste waarden voor de teken area
+    var margin = {top: 20, right: 50, bottom: 0, left: 70};
+    var width = 1500
+    var height = 300
+
+
+    // Het teken gedeelte
+    var canvas = d3.select("body").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.left)
+    ;
+
+    var g = canvas.append('g').attr("transform","translate(50,58)")
+
+    // Standaard reloading function
+    var reload = function() {
+      d3.json("/steps.json", function(rows) {
+          redraw(rows);
+      })
+    }
+
+    // Standaard teken function
+    var redraw = function(data) {
+      var bars = g.selectAll("rect.bar")
+            .data(data);
+
+      bars.enter()
+        .append("rect")
+        .attr("fill", "#26b4cd")
+        .classed("bar", true);
+
+      bars
+        .attr("x", function(d, i) { return i * 50; })
+        .attr("width", 35)
+        .attr("y", function(d) {
+          return height - (d.value * 5);
+        })
+        .attr("height", function(d) { return d.value * 5;})
+
+      // Tekst toevoegen op de X axis
+      var text = g.selectAll("text").data(data)
+      text.enter().append("text")
+          .text(function(d) { return d.time })
+
+          .attr("x", function(d,i) { return i * 50 })
+          .attr("y", function(d,i) { return height + 10 })
+          .style("font-size", 9)
+          .style("font-family", "texgyreadventor-regular")
+
+      };
+
+    reload();

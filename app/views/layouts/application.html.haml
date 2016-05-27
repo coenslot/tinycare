@@ -17,12 +17,20 @@
 		= if fitbit_user_signed_in?
 			%nav
 				.left-part
-					Kek logo
+					= link_to "Terug", :back
 				.middle-part
 					%h2 Overzicht
 				.right-part
-					Uitloggen en instellingen
+					= link_to "Instellingen", care_givers_settings_path
 
 		%main
 			= yield
+
+
+	.example_class 
+		= link_to "Home zorgvrager", fitbit_api_dashboard_path 
+		= link_to "Data", fitbit_api_data_path 
+		= link_to "Notificaties", fitbit_api_notifications_path
+		= link_to "Uitloggen zorgvrager", care_givers_client_overview_path
+
 
