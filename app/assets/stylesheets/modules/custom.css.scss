@@ -1,32 +1,105 @@
 @import "globals/all";
 @import "susy";
+@import "breakpoint";
+
+html {
+	min-height: 100%;
+}
+
 
 body{
 	font-family: $primary-font;
 	background-color: $white;
+	@include container(6);
 }
 
-.left {
-	float: left;
-	text-align: left;
+.background-shape {
+	background: linear-gradient(150deg, #98e4e9, #5fc5cf);
+	width: 200%;
+	height: 600px;
+	position: fixed;
+	z-index: -10;
+	transform: rotate(20deg);
+	left: -20%;
+	top: -30%;
 }
 
-.middle {
-	text-align: center;
+h1 {
+	font-family: Viga-Regular;
+	font-size: 72px;
+	line-height: 0.9;
+	letter-spacing: 5.2px;
+	color: $white;
+	text-transform: uppercase;
 }
 
-.right {
-	float: right;
-	text-align: right;
+h2 {
+	text-transform: uppercase;
+	font-size: 2em;
+	font-weight: bold;
 }
+
+.left-part {text-align: left;}
+
+.middle-part {text-align: center;}
+
+.right-part {text-align: right;}
 
 nav {
-	@include span(12);
+	@include container(6);
 	background: $secondary-color;
 	color: $white;
 	height: 80px;
-	& .part {
-		@include span(4 of 12);
-		display: inline-block;
+	& .left-part {@include span(2);}
+	& .middle-part {@include span(2);}
+	& .right-part {@include span(2);}
+}
+
+main {
+	@include span(6);
+}
+
+form {
+	input {
+		width: 100%;
+		border-radius: 7px;	
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+		border: solid 2px #5fc5cf;
+		padding: 15px 0;
+		text-align: center;
+		font-size: 18px;
+		font-family: $primary-font;
+		margin-bottom: 15px;
+		&:last-child {
+			margin-top: 30px;
+		}
+	}
+	input[type=submit] {
+		border: none;
+		border-radius: 7px;
+		background-image: linear-gradient(136deg, #98e4e9, #5fc5cf);
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+		color: $white;
+		text-transform: uppercase;
+		padding: 15px 95px;
+		font-size: 16px;
+		letter-spacing: 1.2px;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	}
+
+}
+
+
+.form-box {
+	border-radius: 7px;
+	background-color: #ffffff;
+	box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.06);
+	padding: 15px;
+	a{
+		font-size: 13px;
+		letter-spacing: 1px;
+		color: $secondary-color;
+		text-decoration: none;
+		text-align: center;
 	}
 }
