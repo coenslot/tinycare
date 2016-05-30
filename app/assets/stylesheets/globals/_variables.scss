@@ -1,4 +1,4 @@
-// Define all the colors here
+// Define all the variables here
 
 // Base colors
 $primary-color: rgba(38, 208, 170, 100);
@@ -10,6 +10,7 @@ $dark-gray: rgba(162, 162, 162, 100);
 
 // Define the typefaces here
 $primary-font: "TeX Gyre Adventor";
+$secondary-font: "Viga";
 
 // Defining default susy settings for mobile devices
 $susy: (
@@ -17,4 +18,6 @@ $susy: (
 	gutters: 30px/10px,
 	gutter-position: inside,
 );
+
+
 
