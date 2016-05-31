@@ -26,6 +26,9 @@ class FitbitApiController < ApplicationController
   def send_notification
   end
 
+  def add_care_user
+  end
+
 
 end
 
