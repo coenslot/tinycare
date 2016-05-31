@@ -7,3 +7,4 @@ Zorgvrager overzicht
 
 .example
 	= link_to 'Uitloggen', destroy_fitbit_user_session_path, class: "", data: { confirm: 'Weet u zeker dat u wilt uiloggen?' }, method: :delete
+	= current_care_giver.id

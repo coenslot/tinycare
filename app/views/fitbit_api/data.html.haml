@@ -1,9 +1,9 @@
 alle data van client hier
 
-.example_class 
-  = link_to "Maand", fitbit_api_data_path 
-  = link_to "Week", fitbit_api_data_path 
-  = link_to "Dag", fitbit_api_data_path 
+.example_class
+  = link_to "Maand", fitbit_api_data_path
+  = link_to "Week", fitbit_api_data_path
+  = link_to "Dag", fitbit_api_data_path
 
   :css
     svg {
@@ -61,16 +61,30 @@ alle data van client hier
         })
         .attr("height", function(d) { return d.value * 5;})
 
+      function biggerXSpacing(d, i) {
+        var sizeAmplifier = 50; // changes the size of the X
+        return i * sizeAmplifier
+      }
+
       // Tekst toevoegen op de X axis
       var text = g.selectAll("text").data(data)
       text.enter().append("text")
           .text(function(d) { return d.time })
-
-          .attr("x", function(d,i) { return i * 50 })
-          .attr("y", function(d,i) { return height + 10 })
+          .attr("x", biggerXSpacing)
+          .attr("y", function(5,i) { return height + 10 })
           .style("font-size", 9)
           .style("font-family", "texgyreadventor-regular")
 
       };
 
     reload();
+
+
+    new Kevin.Chart('body', [
+      {  }
+    ])
+
+    window.Kevin = {}
+    Kevin.Chart = function(element, data) {
+
+    }
