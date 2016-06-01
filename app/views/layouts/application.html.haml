@@ -13,7 +13,7 @@
 
 
 	%body			
-		- if fitbit_user_signed_in?
+		- if care_giver_signed_in?
 			%nav
 				.left-part
 					= link_to "Terug", :back
@@ -27,7 +27,7 @@
 		%main
 			= yield
 
-		= if fitbit_user_signed_in?
+		= if care_giver_signed_in?
 			.menu 
 				= link_to "Home zorgvrager", fitbit_api_dashboard_path 
 				= link_to "Data", fitbit_api_data_path
