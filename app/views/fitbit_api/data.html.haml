@@ -71,7 +71,7 @@ alle data van client hier
       text.enter().append("text")
           .text(function(d) { return d.time })
           .attr("x", biggerXSpacing)
-          .attr("y", function(5,i) { return height + 10 })
+          .attr("y", function(i) { return height + 10 })
           .style("font-size", 9)
           .style("font-family", "texgyreadventor-regular")
 
@@ -79,12 +79,3 @@ alle data van client hier
 
     reload();
 
-
-    new Kevin.Chart('body', [
-      {  }
-    ])
-
-    window.Kevin = {}
-    Kevin.Chart = function(element, data) {
-
-    }
