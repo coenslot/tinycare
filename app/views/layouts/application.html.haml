@@ -12,7 +12,7 @@
 		%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
 
 
-	%body			
+	%body
 		- if fitbit_user_signed_in?
 			%nav
 				.left-part
@@ -21,17 +21,15 @@
 					%h2 Overzicht
 				.right-part
 					= link_to "Instellingen", care_givers_settings_path
+
 		- else
 			.background-shape
 
 		%main
 			= yield
-
-		= if fitbit_user_signed_in?
-			.menu 
-				= link_to "Home zorgvrager", fitbit_api_dashboard_path 
+		- if !fitbit_user_session.blank?
+			.menu
+				= link_to "Home zorgvrager", fitbit_api_dashboard_path
 				= link_to "Data", fitbit_api_data_path
 				= link_to "Notificaties", fitbit_api_notifications_path
 				= link_to "Uitloggen zorgvrager", care_givers_client_overview_path
-
-
