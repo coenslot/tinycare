@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/fitbit_api/add_care_user', to: 'fitbit_api#add_care_user'         #Make new client
 
 
+
   #Care_givers
   get '/care_givers/client_overview', to: 'care_givers#client_overview'		#Client overview
   get '/care_givers/settings', to: 'care_givers#settings' 					      #Global settings
