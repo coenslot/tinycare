@@ -6,7 +6,6 @@ html {
 	min-height: 100%;
 }
 
-
 body{
 	font-family: $primary-font;
 	background-color: $white;
@@ -33,7 +32,6 @@ h1 {
 	text-transform: uppercase;
 	margin-bottom: 10%;
 	margin-top: 15%;
-
 }
 
 h2 {
@@ -44,6 +42,16 @@ h2 {
 	letter-spacing: 1.5px;
 	color: #ffffff;
 	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+}
+
+p.name {
+	font-weight: bold;
+	font-size: 12px;
+	font-family: $primary-font
+}
+
+p.date {
+	font-size: 9px;
 }
 
 .left-part {text-align: left;}
@@ -94,9 +102,7 @@ form {
 		letter-spacing: 1.2px;
 		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 	}
-
 }
-
 
 .form-box {
 	border-radius: 7px;
@@ -140,3 +146,19 @@ form {
   position: relative;
   top: -15px;
 }
+
+.fitbit-user-box {
+	@include span(6);
+	border-radius: 7px;
+	background: linear-gradient(122deg, #5becd9, #2ed5b2);
+	color: $white;
+	text-align: center;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+}
+
+
+.fitbit-users-list {
+	@include container(12);
+}
+

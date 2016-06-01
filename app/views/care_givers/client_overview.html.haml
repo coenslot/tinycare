@@ -1,7 +1,26 @@
 .main-header
 	%h3 Zorgvragers
-	
+
 hier komen alle zorgvragers/patienten te staan
+.fitbit-users-list
+	.fitbit-user-box
+		= image_tag current_fitbit_user.avatar
+		%p 
+			= current_fitbit_user.name
+		%p.date 01/01/2001
+
+	.fitbit-user-box
+		= image_tag current_fitbit_user.avatar
+		%p 
+			= current_fitbit_user.name
+		%p.date 01/01/2001
+
+	.fitbit-user-box
+		= image_tag current_fitbit_user.avatar
+		%p 
+			= current_fitbit_user.name
+		%p.date 01/01/2001
+
 
 = link_to "Zorgvrager toevoegen", fitbit_api_add_care_user_path, class: ""
 
