@@ -1,9 +1,12 @@
-Zorgvrager overzicht
+%h2 Zorgvrager overzicht
+.example
+	= link_to "sync. datum"
+.example
+	= link_to "a-z"
+
 .example
 	hier komen alle zorgvragers/patienten te staan
 
 .example
 	= link_to "Zorgvrager toevoegen", fitbit_api_add_care_user_path, class: ""
 
-.example
-	= link_to 'Uitloggen', destroy_fitbit_user_session_path, class: "", data: { confirm: 'Weet u zeker dat u wilt uiloggen?' }, method: :delete
