@@ -22,19 +22,20 @@ alle data van client hier
       fill: #f5515f;
     }
   :javascript
-    // Vaste waarden voor de teken area
+    // Vaste waarden voor de teken area - statisch
     var margin = {top: 20, right: 50, bottom: 0, left: 70};
     var width = 1500
     var height = 300
 
 
-    // Het teken gedeelte
+    // selecting and appending attributes - statisch
     var canvas = d3.select("body").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.left)
     ;
 
-    var g = canvas.append('g').attr("transform","translate(50,58)")
+    // appending group function to canvas - statisch
+    var g = canvas.append('g').attr("transform","translate(40,58)")
 
     // Standaard reloading function
     var reload = function() {
@@ -59,23 +60,36 @@ alle data van client hier
         .attr("y", function(d) {
           return height - (d.value * 5);
         })
-        .attr("height", function(d) { return d.value * 5;})
+        .attr("height", increasingHeight)
 
+      // Increasing height to bars
+      function increasingHeight(d) {
+        var sizeIncreaser = 5 // Increase amount of D
+        return d.value * sizeIncreaser
+      }
+
+      // Adding text to X axis
+      var text = g.selectAll("text").data(data)
+      text.enter().append("text")
+          .text(function(d) { return d.time })
+          .attr("x", biggerXSpacing)
+          .attr("y", textMarginToBars)
+          .style("font-size", 9)
+          .style("font-family", "texgyreadventor-regular")
+
+      };
+
+      // Adding spacing to X axis between the bars
       function biggerXSpacing(d, i) {
         var sizeAmplifier = 50; // changes the size of the X
         return i * sizeAmplifier
       }
 
-      // Tekst toevoegen op de X axis
-      var text = g.selectAll("text").data(data)
-      text.enter().append("text")
-          .text(function(d) { return d.time })
-          .attr("x", biggerXSpacing)
-          .attr("y", function(i) { return height + 10 })
-          .style("font-size", 9)
-          .style("font-family", "texgyreadventor-regular")
-
-      };
+      // Adding margin to text from the bars
+      function textMarginToBars(i) {
+        var textToTop = 10 // Adding margin to the bars
+        return height + textToTop
+      }
 
     reload();
 

@@ -9,3 +9,4 @@ class CallbacksController < ApplicationController
   def failure
   end
 end
+
