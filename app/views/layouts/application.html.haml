@@ -20,14 +20,14 @@
 				.middle-part
 					%h2 Overzicht
 				.right-part
-					= link_to "Instellingen", care_givers_settings_path
+					= link_to 'Uitloggen', destroy_fitbit_user_session_path, class: "", data: { confirm: 'Weet u zeker dat u wilt uiloggen?' }, method: :delete
 		- else
 			.background-shape
 
 		%main
 			= yield
 
-		= if care_giver_signed_in?
+		= if fitbit_user_signed_in?
 			.menu 
 				= link_to "Home zorgvrager", fitbit_api_dashboard_path 
 				= link_to "Data", fitbit_api_data_path

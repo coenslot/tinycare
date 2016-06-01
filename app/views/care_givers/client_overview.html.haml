@@ -1,27 +1,18 @@
 .main-header
 	%h3 Zorgvragers
 
-hier komen alle zorgvragers/patienten te staan
 .fitbit-users-list
-	.fitbit-user-box
-		= image_tag current_fitbit_user.avatar
-		%p 
-			= current_fitbit_user.name
-		%p.date 01/01/2001
+	- @fitbits.each do |fitbit_user|
+		.fitbit-user-box
+			.fitbit-user-image{:style => "background-image: url(#{fitbit_user.avatar})"}
+			%p 
+				= fitbit_user.name
+			%p.date 
+				01/01/2001
+			%p.date
+				= fitbit_user.city
+			%p.date
+				= fitbit_user.birth
 
-	.fitbit-user-box
-		= image_tag current_fitbit_user.avatar
-		%p 
-			= current_fitbit_user.name
-		%p.date 01/01/2001
-
-	.fitbit-user-box
-		= image_tag current_fitbit_user.avatar
-		%p 
-			= current_fitbit_user.name
-		%p.date 01/01/2001
-
-
-= link_to "Zorgvrager toevoegen", fitbit_api_add_care_user_path, class: ""
-
-= link_to 'Uitloggen', destroy_fitbit_user_session_path, class: "", data: { confirm: 'Weet u zeker dat u wilt uiloggen?' }, method: :delete
+.button-area
+	= link_to "Zorgvrager toevoegen", fitbit_api_add_care_user_path, class: "secondary-button center"
