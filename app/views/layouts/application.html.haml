@@ -12,7 +12,7 @@
 		%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
 
 
-	%body			
+	%body
 		- if care_giver_signed_in?
 			%nav
 				.left-part
@@ -28,7 +28,7 @@
 			= yield
 
 		= if fitbit_user_signed_in?
-			.bottom-menu 
+			.bottom-menu
 				= link_to fitbit_api_dashboard_path, class: 'menu-item active' do
 					%i.fa.fa-user
 				= link_to fitbit_api_data_path, class: 'menu-item' do
