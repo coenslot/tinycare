@@ -27,7 +27,7 @@
 		%main
 			= yield
 
-		= if fitbit_user_signed_in?
+		- if fitbit_user_signed_in?
 			.bottom-menu 
 				= link_to fitbit_api_dashboard_path, class: 'menu-item active' do
 					%i.fa.fa-user
