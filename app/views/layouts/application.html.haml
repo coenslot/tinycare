@@ -12,9 +12,8 @@
 		%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
 
 
-	%body
-		.background-shape
-		= if fitbit_user_signed_in?
+	%body			
+		- if fitbit_user_signed_in?
 			%nav
 				.left-part
 					= link_to "Terug", :back
@@ -22,6 +21,8 @@
 					%h2 Overzicht
 				.right-part
 					= link_to "Instellingen", care_givers_settings_path
+		- else
+			.background-shape
 
 		%main
 			= yield
