@@ -72,6 +72,28 @@ nav {
 	& .right-part {@include span(3);}
 }
 
+.bottom-menu {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	.menu-item{
+		display: inline-block;
+		@include span(3 inside no-gutter);
+		background: $tertiary-color;
+		color: $white;
+		height: 55px;
+		text-align: center;
+		line-height: 55px;
+	}
+	.active {
+		border-top: 5px solid $primary-color;
+	}
+	.fa {
+		font-size: 25px;
+	}
+}
+
 main {
 	@include span(12);
 }
