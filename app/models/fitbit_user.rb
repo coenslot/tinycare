@@ -31,7 +31,7 @@ class FitbitUser < ApplicationRecord
   has_one :identity
 
 
-  def self.from_omniauth(auth)
+  def self.from_omniauth(auth, user)
     identity = Identity.where(provider: auth.provider, uid: auth.uid).first_or_create do |identity|
       if identity.fitbit_user == nil
         fitbit_user = FitbitUser.new
@@ -41,6 +41,7 @@ class FitbitUser < ApplicationRecord
         fitbit_user.avatar = auth.extra["raw_info"].user["avatar"]
         fitbit_user.birth = auth.extra["raw_info"].user["dateOfBirth"]
         fitbit_user.city = auth.extra["raw_info"].user["city"]
+        fitbit_user.care_giver_id = user.id
       end
       identity.fitbit_user = fitbit_user
     end

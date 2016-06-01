@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   devise_for :care_givers
   devise_for :fitbit_users, :controllers => { :omniauth_callbacks => "callbacks" }
 
-  devise_scope :fitbit_user do
-    authenticated :fitbit_user do
+  devise_scope :care_giver do
+    authenticated :care_giver do
       root :to => 'care_givers#client_overview'
+
     end
     unauthenticated :user do
       root :to => 'devise/sessions#new', as: :unauthenticated_root
