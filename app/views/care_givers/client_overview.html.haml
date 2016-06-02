@@ -5,7 +5,7 @@
 	- @fitbits.each do |fitbit_user|
 		= link_to "fitbit_users/auth/fitbit_oauth2" do
 			.fitbit-user-box
-				.fitbit-user-image{:style => "background-image: url(#{fitbit_user.avatar})"}
+				.fitbit-user-image.overview{:style => "background-image: url(#{fitbit_user.avatar})"}
 				%p
 					= fitbit_user.name
 				%p.date

@@ -80,7 +80,7 @@ nav {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	.menu-item{
+	.menu-item a{
 		display: inline-block;
 		@include span(3 inside no-gutter);
 		background: $tertiary-color;
@@ -88,8 +88,9 @@ nav {
 		height: 55px;
 		text-align: center;
 		line-height: 55px;
+		border-top: 5px solid $tertiary-color;
 	}
-	.active {
+	a.active {
 		border-top: 5px solid $primary-color;
 	}
 	.fa {
@@ -220,13 +221,15 @@ form {
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: -10%;
-	.dashboard {
-		width: 100px;
-    height: 100px;
-    top: 70px;
-	}
 }
+
+.dashboard {
+	top: 11%;
+}
+.overview {
+	top: -10%;
+}
+
 
 .button-area {
 	@include span(12);
