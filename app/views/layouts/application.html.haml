@@ -7,6 +7,9 @@
 		= javascript_include_tag 'application', 'data-turbolinks-track' => true
 		%script{:src => "https://d3js.org/d3.v4.0.0-alpha.40.min.js"}
 		%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"}
+		%link{:href => "https://fonts.googleapis.com/css?family=Lato:700,400", :rel => "stylesheet", :type => "text/css"}/
+
+
 
 		= csrf_meta_tags
 		%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
@@ -20,7 +23,13 @@
 					%h2 Dashboard
 				.right-part
 					= link_to 'Uitloggen', destroy_fitbit_user_session_path, class: "", data: { confirm: 'Weet u zeker dat u wilt uitloggen?' }, method: :delete
-				.fitbit-user-image.dashboard{:style => "background-image: url(#{current_fitbit_user.avatar})"}
+				.header-image
+					= link_to "", fitbit_api_profile_path, {:class=>'fitbit-user-image dashboard', :style=>"background-image: url(#{current_fitbit_user.avatar})"}
+				.header-text
+					%h3 
+						= current_fitbit_user.name
+					%p
+						= current_fitbit_user.city
 		- elsif care_giver_signed_in?
 			%nav
 				.left-part
