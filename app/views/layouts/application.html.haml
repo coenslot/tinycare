@@ -23,7 +23,13 @@
 					%h2 Dashboard
 				.right-part
 					= link_to 'Uitloggen', destroy_fitbit_user_session_path, class: "", data: { confirm: 'Weet u zeker dat u wilt uitloggen?' }, method: :delete
-				.fitbit-user-image.dashboard{:style => "background-image: url(#{current_fitbit_user.avatar})"}
+				.header-image
+					= link_to "", fitbit_api_profile_path, {:class=>'fitbit-user-image dashboard', :style=>"background-image: url(#{current_fitbit_user.avatar})"}
+				.header-text
+					%h3 
+						= current_fitbit_user.name
+					%p
+						= current_fitbit_user.city
 		- elsif care_giver_signed_in?
 			%nav
 				.left-part
