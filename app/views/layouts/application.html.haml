@@ -28,7 +28,7 @@
 				.header-image
 					= link_to "", fitbit_api_profile_path, {:class=>'fitbit-user-image dashboard', :style=>"background-image: url(#{current_fitbit_user.avatar})"}
 				.header-text
-					%h3 
+					%h3
 						= current_fitbit_user.name
 					%p
 						= current_fitbit_user.city
@@ -47,7 +47,7 @@
 			= yield
 
 		- if fitbit_user_signed_in?
-			.bottom-menu 
+			.bottom-menu
 				.menu-item
 					= link_to fitbit_api_dashboard_path, class: [ ('active' if current_page?(fitbit_api_dashboard_path)) ] do
 						%i.fa.fa-user
