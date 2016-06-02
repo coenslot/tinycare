@@ -47,7 +47,7 @@ h2 {
 p.name {
 	font-weight: bold;
 	font-size: 12px;
-	font-family: $primary-font
+	font-family: $tertiary-font
 }
 
 p.date {
@@ -193,6 +193,8 @@ form {
   position: relative;
   top: -15px;
   box-sizing: border-box;
+  font-family: $tertiary-font;
+  font-weight: bold;
 }
 
 .fitbit-users-list {
