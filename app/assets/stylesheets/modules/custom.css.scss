@@ -2,8 +2,11 @@
 @import "susy";
 @import "breakpoint";
 
-html {
-	min-height: 100%;
+html, body {
+	max-height: 100%;
+	max-width: 100%;
+	overflow: hidden;
+
 }
 
 body{
@@ -117,7 +120,6 @@ nav {
 
 main {
 	@include span(12);
-	overflow: hidden;
 }
 
 form {
