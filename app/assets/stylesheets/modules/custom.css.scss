@@ -117,6 +117,7 @@ nav {
 
 main {
 	@include span(12);
+	overflow: hidden;
 }
 
 form {
