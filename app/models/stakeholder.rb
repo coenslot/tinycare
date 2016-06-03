@@ -19,4 +19,5 @@
 
 class Stakeholder < ApplicationRecord
   belongs_to :fitbit_user
+  belongs_to :notification
 end
