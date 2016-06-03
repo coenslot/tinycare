@@ -58,5 +58,5 @@
 					= link_to fitbit_api_notifications_path, class: [ ('active' if current_page?(fitbit_api_notifications_path)) ] do
 						%i.fa.fa-bell-o
 				.menu-item
-					= link_to care_givers_client_overview_path, class: [ ('active' if current_page?(care_givers_client_overview_path)) ] do
+					= link_to destroy_fitbit_user_session_path, class: [ ('active' if current_page?(care_givers_client_overview_path)) ], method: :delete do
 						%i.fa.fa-sign-out
