@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   get '/care_givers/settings', to: 'care_givers#settings' 					      #Global settings
 
 
-  match '/steps', to: 'fitbit_api#steps', via: 'get'
+  get '/steps', to: 'fitbit_api#steps'
 
 end
