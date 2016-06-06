@@ -30,3 +30,5 @@ Rails.application.routes.draw do
   get '/steps', to: 'fitbit_api#steps'
 
 end
+
+
