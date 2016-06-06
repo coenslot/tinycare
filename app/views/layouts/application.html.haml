@@ -19,32 +19,34 @@
 	%body
 		- if care_giver_signed_in? && fitbit_user_signed_in?
 			%nav.bignav
-				.left-part
-					TinyCare
-				.middle-part
-					%h2 Dashboard
-				.right-part
-					.dropdown
-						%a.fa.fa-ellipsis-v
-						.dropdown-content
-							= link_to "Instellingen", care_givers_settings_path, class: "dropdown-item"
-							= link_to 'Uitloggen', destroy_care_giver_session_path, class: "dropdown-item", data: { confirm: 'Weet u zeker dat u wilt uitloggen?' }, method: :delete
-
-				.header-image
-					= link_to "", fitbit_api_profile_path, {:class=>'fitbit-user-image dashboard', :style=>"background-image: url(#{current_fitbit_user.avatar})"}
-				.header-text
-					%h3
-						= current_fitbit_user.name
-					%p
-						= current_fitbit_user.city
+				.upper-nav
+					.left-part
+						doei
+					.middle-part
+						%h2 Dashboard
+					.right-part
+						.dropdown
+							%a.fa.fa-ellipsis-v
+							.dropdown-content
+								= link_to "Instellingen", care_givers_settings_path, class: "dropdown-item"
+								= link_to 'Uitloggen', destroy_care_giver_session_path, class: "dropdown-item", data: { confirm: 'Weet u zeker dat u wilt uitloggen?' }, method: :delete
+				.lower-nav
+					.header-image
+						= link_to "", fitbit_api_profile_path, {:class=>'fitbit-user-image dashboard', :style=>"background-image: url(#{current_fitbit_user.avatar})"}
+					.header-text
+						%h3
+							= current_fitbit_user.name
+						%p
+							= current_fitbit_user.city
 		- elsif care_giver_signed_in?
 			%nav
-				.left-part
-					= link_to fa_icon("arrow-left"), :back
-				.middle-part
-					%h2 Overzicht
-				.right-part
-					= link_to 'Uitloggen', destroy_care_giver_session_path, class: "", data: { confirm: 'Weet u zeker dat u wilt uitloggen?' }, method: :delete
+				.upper-nav
+					.left-part
+						= link_to fa_icon("arrow-left"), :back
+					.middle-part
+						%h2 Overzicht
+					.right-part
+						= link_to 'Uitloggen', destroy_care_giver_session_path, class: "", data: { confirm: 'Weet u zeker dat u wilt uitloggen?' }, method: :delete
 		- else
 			.background-shape
 
