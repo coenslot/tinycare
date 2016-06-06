@@ -4,14 +4,11 @@
 .content
 	Het toevoegen van een fitbit account werkt als volgt:
 
-	%p - Maak op de Fitbit App een account aan voor de nieuwe zorgvrager
+	%p 1. Maak op de Fitbit website (https://www.fitbit.com/logout) een gratis account aan voor de nieuwe zorgvrager
 
-	%p - Op deze pagina kan dit account worden gekoppeld aan TinyCare
+	%p 2. Op de onderstaande knop "Zorgvrager toevoegen" kan dit account worden gekoppeld aan #{current_care_giver.email}
 
-	%P - Vul de inloggevens van de zorgvrager in en klik op "log in"
-
-	%P - Het fitbit account is nu gekoppeld aan TinyCare en verschijnt in het zorgvrager overzicht
-
+	%P 3. Het fitbit account is nu gekoppeld aan #{current_care_giver.email} en verschijnt in het zorgvrager overzicht
 
 .button-area
 	= link_to "Zorgvrager toevoegen", "fitbit_users/auth/fitbit_oauth2", class: "secondary-button center"
