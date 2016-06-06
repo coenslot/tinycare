@@ -56,10 +56,20 @@ p.name {
 p.date {
 	font-size: 9px;
 }
-.left-part, .middle-part, .right-part {line-height: 80px; vertical-align: bottom; @include border-box-sizing;}
-.left-part {text-align: left;}
-.middle-part {text-align: center;}
-.right-part {text-align: right;}
+.left-part, .middle-part, .right-part {vertical-align: bottom; @include border-box-sizing;}
+
+.left-part {
+	text-align: left;
+	@include span(3 at 1);
+}
+.middle-part {
+	text-align: center;
+	@include span(6 at 4);
+}
+.right-part {
+	text-align: right;
+	@include span(3 at 10);
+}
 
 .center {
 	margin: 0 auto;
@@ -76,9 +86,7 @@ nav {
 	}
 	.upper-nav{
 		height: 80px;
-		& .left-part {@include span(3 at 1);}
-		& .middle-part {@include span(6 at 4);}
-		& .right-part {@include span(3 at 10);}
+		.left-part, .middle-part, .right-part {line-height: 80px;}
 	}
 	.lower-nav {
 		height: 140px;
@@ -95,6 +103,7 @@ nav {
 				font-size: 22px;
 			}
 			p { 
+				margin-top: 5px;
 				font-size: 14px;
 			}
 		}
@@ -241,7 +250,7 @@ form {
 }
 
 .main-header {
-	@include span(12);
+	@include span(12 inside no-gutter);
 	border-radius: 7px;
 	background-image: linear-gradient(125deg, #359db8, #6cd2d7);
 	color: $white;
@@ -255,6 +264,54 @@ form {
 	font-weight: bold;
 	&.dashboard {
 		background-image: linear-gradient(to bottom, #ff3838, #ffa06b);
+	}
+	&.profile {
+		background: $white;
+		color: $gray;
+		font-family: $primary-font;
+		font-size: 14px;
+		letter-spacing: 1.1px;
+		font-weight: 500;
+		line-height: initial;
+		z-index: 3;
+		margin-bottom: 15px;
+		&:before {
+			content: " ";
+			display: block;
+			transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-webkit-transform: rotate(-45deg);
+			-o-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			background-color: white;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: -14px;
+			left: 23px;
+			-webkit-border-radius: 0 20px 0 0;
+			-moz-border-radius: 0 20px 0 0;
+			border-radius: 0 10px 0 0;
+			z-index: -1;
+		}
+		span.units {
+			font-size: 20px;
+			letter-spacing: 1.5px;
+		}
+	}
+}
+
+.profile-button {
+	text-align: center;
+	border-radius: 7px;
+	background-image: linear-gradient(to bottom, #ffffff, #ececec);
+	p {
+		padding: 20px 0;
+		color: $gray;
+		font-size: 14px;
+		letter-spacing: 1.1px;
+		font-family: $tertiary-font;
+		font-weight: bold;
 	}
 }
 
@@ -294,10 +351,6 @@ form {
 
 	}
 }
-
-
-
-
 
 .button-area {
 	@include span(12);
