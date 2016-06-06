@@ -40,6 +40,8 @@ class FitbitUser < ApplicationRecord
         fitbit_user.name = auth.extra["raw_info"].user["fullName"]
         fitbit_user.avatar = auth.extra["raw_info"].user["avatar"]
         fitbit_user.gender = auth.extra["raw_info"].user["gender"]
+        fitbit_user.height = auth.extra["raw_info"].user["height"]
+        fitbit_user.kilogram = auth.extra["raw_info"].user["weight"]
         fitbit_user.birth = auth.extra["raw_info"].user["dateOfBirth"]
         fitbit_user.city = auth.extra["raw_info"].user["city"]
         fitbit_user.care_giver_id = user.id
