@@ -1,6 +1,6 @@
 class FitbitApiController < ApplicationController
 
-  before_filter :authenticate_fitbit_user!
+  before_filter :authenticate_fitbit_user!, except: [:add_care_user]
 
   def steps
     render json: data

@@ -1,4 +1,17 @@
-Zorgvrager toevoegen
+.main-header
+	%h3 Fitbit account toevoegen
 
-.example
-	= link_to "Opslaan", care_givers_client_overview_path, class: ""
+.content
+	Het toevoegen van een fitbit account werkt als volgt:
+
+	%p - Maak op de Fitbit App een account aan voor de nieuwe zorgvrager
+
+	%p - Op deze pagina kan dit account worden gekoppeld aan TinyCare
+
+	%P - Vul de inloggevens van de zorgvrager in en klik op "log in"
+
+	%P - Het fitbit account is nu gekoppeld aan TinyCare en verschijnt in het zorgvrager overzicht
+
+
+.button-area
+	= link_to "Zorgvrager toevoegen", "fitbit_users/auth/fitbit_oauth2", class: "secondary-button center"
