@@ -39,6 +39,7 @@ class FitbitUser < ApplicationRecord
         fitbit_user.password = Devise.friendly_token[0,20]
         fitbit_user.name = auth.extra["raw_info"].user["fullName"]
         fitbit_user.avatar = auth.extra["raw_info"].user["avatar"]
+        fitbit_user.gender = auth.extra["raw_info"].user["gender"]
         fitbit_user.birth = auth.extra["raw_info"].user["dateOfBirth"]
         fitbit_user.city = auth.extra["raw_info"].user["city"]
         fitbit_user.care_giver_id = user.id
