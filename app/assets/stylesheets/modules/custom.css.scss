@@ -287,7 +287,11 @@ form {
 		top: 10%;
 	}
 	&.overview {
+		position: absolute;
+		left: 0;
+		right: 0;
 		top: -10%;
+
 	}
 }
 
