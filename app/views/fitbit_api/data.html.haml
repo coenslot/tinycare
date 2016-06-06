@@ -27,7 +27,7 @@ Hier komt de zorgvrager data
     ;
 
     // appending group function to canvas - statisch
-    var g = canvas.append('g').attr("transform","translate(40,58)")
+    var g = canvas.append('g').attr("transform","translate(5, 58)")
 
     // Standaard reloading function
     var reload = function() {
@@ -38,15 +38,15 @@ Hier komt de zorgvrager data
 
     // Standaard teken function
     var redraw = function(data) {
-      var bars = g.selectAll("rect.bar")
+      var type = g.selectAll("rect.bar")
             .data(data);
 
-      bars.enter()
+      type.enter()
         .append("rect")
         .attr("fill", "#26b4cd")
         .classed("bar", true);
 
-      bars
+      type
         .attr("x", biggerXSpacingBetween)
         .attr("width", 35)
         .attr("y", function(d) {
@@ -59,43 +59,43 @@ Hier komt de zorgvrager data
       text.enter().append("text")
           .text(function(d) { return d.time })
           .attr("x", biggerXSpacing)
-          .attr("y", textMarginToBars)
+          .attr("y", textMarginToType)
           .style("font-size", 9)
           .style("font-family", "texgyreadventor-regular")
 
       };
 
-      // Increasing height to bars
+      // Increasing height to type
       function increasingHeight(d) {
         var sizeIncreaser = 5 // Increase amount of D
         return d.value * sizeIncreaser
       }
 
-      // Adding spacing to X axis 'inside' the bars
+      // Adding spacing to X axis 'inside' the type
       function biggerXSpacingBetween(d, i) {
-        var xSpacingBetween = 50; // changes the size of the X between bars
+        var xSpacingBetween = 50; // changes the size of the X between type
         return i * xSpacingBetween
       }
 
-      // Adding spacing to X axis between the bars
+      // Adding spacing to X axis between the type
       function biggerXSpacing(d, i) {
         var sizeAmplifier = 50; // changes the size of the X
         return i * sizeAmplifier
       }
 
-      // Adding margin to text from the bars
-      function textMarginToBars(i) {
-        var textToTop = 10 // Adding margin to the bars
+      // Adding margin to text from the type
+      function textMarginToType(i) {
+        var textToTop = 10 // Adding margin to the type
         return height + textToTop
       }
 
     reload();
 
 
-    // var chart = canvas.redraw( "domElement", {
-    //   "type": "line",
-    //   "dataset": [1, 3, 7, 4, 12, 5]
+    // var chart = canvas.redraw(dataset) {
+    //   "type": "line", (dit bestaat sowieso nog niet)
+    //   "dataset": [1, 3, 7, 4, 12, 5];
     // });
 
-    // chart.reload(dataset?)
+    // chart.reload()
 
