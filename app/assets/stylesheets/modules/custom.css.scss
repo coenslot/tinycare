@@ -83,7 +83,7 @@ nav {
 			line-height: 16px;
 			text-align: center;
 			position: relative;
-			top: 33%;
+			top: 35%;
 			font-family: $tertiary-font;
 			h3 {
 				font-size: 14px;
@@ -91,6 +91,36 @@ nav {
 			p { 
 				font-size: 10px;
 			}
+		}
+	}
+	.dropdown {
+		.fa {
+			font-size: 35px;
+			padding: 10px;		
+		}
+		.dropdown-content{
+			width: 50%;
+	    position: absolute;
+	    right: 0px;
+	    top: 70px;
+	    background: $primary-color;
+	    z-index: 3;
+	    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+	    display: none;
+	    .dropdown-item{
+				display: block;
+				line-height: initial;
+				text-decoration: none;
+				border-bottom: 1px solid $white;
+				padding: 10px;
+				text-align: left;
+				font-size: 18px;
+				color: $white;
+				font-family: $tertiary-font;
+				&:last-child {
+					border: none;
+				}
+	    }
 		}
 	}
 }
@@ -249,7 +279,7 @@ form {
 	left: 0;
 	right: 0;
 	&.dashboard {
-		top: 11%;
+		top: 10%;
 	}
 	&.overview {
 		top: -10%;

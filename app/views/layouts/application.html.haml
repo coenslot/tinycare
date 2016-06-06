@@ -20,11 +20,16 @@
 		- if care_giver_signed_in? && fitbit_user_signed_in?
 			%nav.bignav
 				.left-part
-					= link_to fa_icon "arrow-left"
+					TinyCare
 				.middle-part
 					%h2 Dashboard
 				.right-part
-					= link_to 'Uitloggen', destroy_fitbit_user_session_path, class: "", data: { confirm: 'Weet u zeker dat u wilt uitloggen?' }, method: :delete
+					.dropdown
+						%a.fa.fa-ellipsis-v
+						.dropdown-content
+							= link_to "Instellingen", care_givers_settings_path, class: "dropdown-item"
+							= link_to 'Uitloggen', destroy_care_giver_session_path, class: "dropdown-item", data: { confirm: 'Weet u zeker dat u wilt uitloggen?' }, method: :delete
+
 				.header-image
 					= link_to "", fitbit_api_profile_path, {:class=>'fitbit-user-image dashboard', :style=>"background-image: url(#{current_fitbit_user.avatar})"}
 				.header-text
