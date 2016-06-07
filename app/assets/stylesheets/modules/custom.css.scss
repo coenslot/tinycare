@@ -80,16 +80,16 @@ nav {
 	color: $white;
 	@include container(12);
 	&.bignav {
-		height: 220px;
+		height: 250px;
 		line-height: initial;
 		background-image: linear-gradient(120deg, #238cae, #258eaf 3%, #6dd3d7);
 	}
 	.upper-nav{
-		height: 80px;
+		height: 70px;
 		.left-part, .middle-part, .right-part {line-height: 80px;}
 	}
 	.lower-nav {
-		height: 140px;
+		height: 180px;
 		.header-image {
 		}
 		.header-text{
@@ -148,6 +148,7 @@ nav {
 	width: 100%;
 	.menu-item a{
 		display: inline-block;
+		box-shadow: inset 0 -4px 6px 0 rgba(0, 0, 0, 0.10);
 		@include span(3 inside no-gutter);
 		background: $tertiary-color;
 		color: $white;
@@ -158,6 +159,9 @@ nav {
 	}
 	a.active {
 		border-top: 5px solid $primary-color;
+		box-shadow: inset 0 -4px 6px 0 rgba(0, 0, 0, 0.10);
+
+
 	}
 	.fa {
 		font-size: 25px;
@@ -340,8 +344,27 @@ form {
 	height: 68px;
 	margin: 0 auto;
 	display: block;
+	background-size: cover;
+	background-repeat: no-repeat;
+
 	&.dashboard {
-		top: 10%;
+		width: 100px;
+		height: 100px;
+		overflow: hidden;
+		position: relative;
+		& span.profile-label {
+			color: $white;
+			font-family: $secondary-font;
+			font-size: 14px;
+			padding: 0 0 3px;
+			border-top: 2px solid $white;
+			background: $primary-color;
+			width: 100%;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			text-align: center;	
+		}
 	}
 	&.overview {
 		position: absolute;
@@ -356,5 +379,6 @@ form {
 	@include span(12);
 	text-align: center;
 }
+
 
 
