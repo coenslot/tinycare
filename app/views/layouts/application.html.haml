@@ -66,5 +66,5 @@
 					= link_to fitbit_api_notifications_path, class: [ ('active' if current_page?(fitbit_api_notifications_path)) ] do
 						%i.fa.fa-bell-o
 				.menu-item
-					= link_to destroy_fitbit_user_session_path, class: [ ('active' if current_page?(care_givers_client_overview_path)) ],data: { confirm: 'Weet u zeker dat u deze fitbit account wilt uitloggen?' }, method: :delete do
+					= link_to destroy_fitbit_user_session_path, class: [ ('active' if current_page?(care_givers_client_overview_path)) ],data: { confirm: 'Wilt u dit Fitbit account uitloggen en terugkeren naar het zorgvrager overzicht?' }, method: :delete do
 						%i.fa.fa-sign-out

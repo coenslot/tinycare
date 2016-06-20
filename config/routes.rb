@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get '/fitbit_api/send_notification', to: 'fitbit_api#send_notification'	#Send a notification to stakeholder
   get '/fitbit_api/add_care_user', to: 'fitbit_api#add_care_user'         #Make new client
 
+  get '/fitbit_api/fitbit_users/auth/fitbit_oauth2' => redirect("/fitbit_users/auth/fitbit_oauth2")
+  
 
 
   #Care_givers
@@ -30,3 +32,5 @@ Rails.application.routes.draw do
   get '/steps', to: 'fitbit_api#steps'
 
 end
+
+
