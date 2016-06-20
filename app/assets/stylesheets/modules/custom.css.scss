@@ -82,7 +82,7 @@ nav {
 	&.bignav {
 		height: 250px;
 		line-height: initial;
-		background-image: linear-gradient(120deg, #238cae, #258eaf 3%, #6dd3d7);
+		background: $secondary-color;
 	}
 	.upper-nav{
 		height: 70px;
@@ -243,9 +243,9 @@ form {
 		background-color: white;
 		width: 40px;
 		height: 40px;
-		position: absolute;
-		top: 210px;
-		left: 50px;
+		position: relative;
+		top: -35px;
+		left: 18px;
 		-webkit-border-radius: 0 20px 0 0;
 		-moz-border-radius: 0 20px 0 0;
 		border-radius: 0 10px 0 0;
@@ -319,6 +319,9 @@ form {
 	}
 }
 
+.profile-dropdowns {
+	margin-top: 15px;
+}
 
 .fitbit-users-list {
 	@include container(12);
