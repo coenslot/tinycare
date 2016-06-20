@@ -11,8 +11,20 @@ First run this command to get install gems:
 Then use this command to migrate the database:
 <tt>rails db:migrate</tt>
 
+Then use this command to get a careGiver account:
+<tt>rails db:seed</tt>
+
 Then start the server with guard:
 <tt>bundle exec guard</tt>
+
+When you open the application, click on the right mouseclick and use "inspecteren". Then use <tt>CMD+SHIFT+M</tt> to scale the application to mobile view.
+
+<hr>
+
+When you logged in, you need to click on "zorgvrager toevoegen". On this page you can add Kevin Etore his fitbit account, by adding his email <tt>info@etore</tt> and his password <tt>ponykamp</tt>.
+
+Now you are able to see your first care user in the application. You can now log in a fitbitsession on this care user and see the data that belongs to this care user!
+
 
 
 Made by Chef
