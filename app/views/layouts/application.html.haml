@@ -21,7 +21,7 @@
 			%nav.bignav
 				.upper-nav
 					.left-part
-						doei
+						a
 					.middle-part
 						%h2 Dashboard
 					.right-part
@@ -32,7 +32,8 @@
 								= link_to 'Uitloggen', destroy_care_giver_session_path, class: "dropdown-item", data: { confirm: 'Weet u zeker dat u wilt uitloggen?' }, method: :delete
 				.lower-nav
 					.header-image
-						= link_to "", fitbit_api_profile_path, {:class=>'fitbit-user-image dashboard', :style=>"background-image: url(#{current_fitbit_user.avatar})"}
+						= link_to fitbit_api_profile_path, :class=>'fitbit-user-image dashboard', :style=>"background-image: url(#{current_fitbit_user.avatar})" do
+							%span.profile-label Profiel
 					.header-text
 						%h3
 							= current_fitbit_user.name

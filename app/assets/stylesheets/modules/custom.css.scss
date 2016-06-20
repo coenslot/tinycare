@@ -56,10 +56,20 @@ p.name {
 p.date {
 	font-size: 9px;
 }
-.left-part, .middle-part, .right-part {line-height: 80px; vertical-align: bottom; @include border-box-sizing;}
-.left-part {text-align: left;}
-.middle-part {text-align: center;}
-.right-part {text-align: right;}
+.left-part, .middle-part, .right-part {vertical-align: bottom; @include border-box-sizing;}
+
+.left-part {
+	text-align: left;
+	@include span(3 at 1);
+}
+.middle-part {
+	text-align: center;
+	@include span(6 at 4);
+}
+.right-part {
+	text-align: right;
+	@include span(3 at 10);
+}
 
 .center {
 	margin: 0 auto;
@@ -70,18 +80,16 @@ nav {
 	color: $white;
 	@include container(12);
 	&.bignav {
-		height: 220px;
+		height: 250px;
 		line-height: initial;
-		background-image: linear-gradient(120deg, #238cae, #258eaf 3%, #6dd3d7);
+		background: $secondary-color;
 	}
 	.upper-nav{
-		height: 80px;
-		& .left-part {@include span(3 at 1);}
-		& .middle-part {@include span(6 at 4);}
-		& .right-part {@include span(3 at 10);}
+		height: 70px;
+		.left-part, .middle-part, .right-part {line-height: 80px;}
 	}
 	.lower-nav {
-		height: 140px;
+		height: 180px;
 		.header-image {
 		}
 		.header-text{
@@ -95,6 +103,7 @@ nav {
 				font-size: 22px;
 			}
 			p { 
+				margin-top: 5px;
 				font-size: 14px;
 			}
 		}
@@ -139,6 +148,7 @@ nav {
 	width: 100%;
 	.menu-item a{
 		display: inline-block;
+		box-shadow: inset 0 -4px 6px 0 rgba(0, 0, 0, 0.10);
 		@include span(3 inside no-gutter);
 		background: $tertiary-color;
 		color: $white;
@@ -149,6 +159,9 @@ nav {
 	}
 	a.active {
 		border-top: 5px solid $primary-color;
+		box-shadow: inset 0 -4px 6px 0 rgba(0, 0, 0, 0.10);
+
+
 	}
 	.fa {
 		font-size: 25px;
@@ -230,9 +243,9 @@ form {
 		background-color: white;
 		width: 40px;
 		height: 40px;
-		position: absolute;
-		top: 210px;
-		left: 50px;
+		position: relative;
+		top: -35px;
+		left: 18px;
 		-webkit-border-radius: 0 20px 0 0;
 		-moz-border-radius: 0 20px 0 0;
 		border-radius: 0 10px 0 0;
@@ -241,7 +254,7 @@ form {
 }
 
 .main-header {
-	@include span(12);
+	@include span(12 inside no-gutter);
 	border-radius: 7px;
 	background-image: linear-gradient(125deg, #359db8, #6cd2d7);
 	color: $white;
@@ -256,8 +269,59 @@ form {
 	&.dashboard {
 		background-image: linear-gradient(to bottom, #ff3838, #ffa06b);
 	}
+	&.profile {
+		background: $white;
+		color: $gray;
+		font-family: $primary-font;
+		font-size: 14px;
+		letter-spacing: 1.1px;
+		font-weight: 500;
+		line-height: initial;
+		z-index: 3;
+		margin-bottom: 15px;
+		&:before {
+			content: " ";
+			display: block;
+			transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-webkit-transform: rotate(-45deg);
+			-o-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			background-color: white;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: -14px;
+			left: 23px;
+			-webkit-border-radius: 0 20px 0 0;
+			-moz-border-radius: 0 20px 0 0;
+			border-radius: 0 10px 0 0;
+			z-index: -1;
+		}
+		span.units {
+			font-size: 20px;
+			letter-spacing: 1.5px;
+		}
+	}
 }
 
+.profile-button {
+	text-align: center;
+	border-radius: 7px;
+	background-image: linear-gradient(to bottom, #ffffff, #ececec);
+	p {
+		padding: 20px 0;
+		color: $gray;
+		font-size: 14px;
+		letter-spacing: 1.1px;
+		font-family: $tertiary-font;
+		font-weight: bold;
+	}
+}
+
+.profile-dropdowns {
+	margin-top: 15px;
+}
 
 .fitbit-users-list {
 	@include container(12);
@@ -283,21 +347,41 @@ form {
 	height: 68px;
 	margin: 0 auto;
 	display: block;
+	background-size: cover;
+	background-repeat: no-repeat;
+
 	&.dashboard {
-		top: 10%;
+		width: 100px;
+		height: 100px;
+		overflow: hidden;
+		position: relative;
+		& span.profile-label {
+			color: $white;
+			font-family: $secondary-font;
+			font-size: 14px;
+			padding: 0 0 3px;
+			border-top: 2px solid $white;
+			background: $primary-color;
+			width: 100%;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			text-align: center;	
+		}
 	}
 	&.overview {
+		position: absolute;
+		left: 0;
+		right: 0;
 		top: -10%;
+
 	}
 }
-
-
-
-
 
 .button-area {
 	@include span(12);
 	text-align: center;
 }
+
 
 
