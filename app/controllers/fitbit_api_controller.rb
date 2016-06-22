@@ -8,7 +8,8 @@ class FitbitApiController < ApplicationController
 
   def data
     client = current_fitbit_user.fitbit_client
-    steps = Rails.cache.fetch("#{current_fitbit_user.id}-client-activity", expires_in: 30.seconds) do
+    steps = Rails.cache.fetch("#{current_fitbit_user.id}-client-activity", expires_in: 10.seconds) do
+      puts "i sended a new request to Fitbit to get new data for steps_data"
       client.activity_time_series(resource: 'steps', start_date: '2016-05-03', period: '1d')
     end
     steps["activities-steps-intraday"]["dataset"]
@@ -20,7 +21,8 @@ class FitbitApiController < ApplicationController
 
   def heartrate_data
     client = current_fitbit_user.fitbit_client
-    heartrate = Rails.cache.fetch("#{current_fitbit_user.id}-client-activity", expires_in: 30.seconds) do
+    heartrate = Rails.cache.fetch("#{current_fitbit_user.id}-client-activity", expires_in: 10.seconds) do
+      puts "i sended a new request to Fitbit to get new data for heartrate_data"
       client.heartrate_time_series(start_date: '2016-05-03', period: '1d')
     end
     heartrate["activities-heart-intraday"]["dataset"]
