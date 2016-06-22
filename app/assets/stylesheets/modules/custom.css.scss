@@ -78,7 +78,7 @@ p.date {
 }
 
 nav {
-	background-image: linear-gradient(125deg, #359db8, #6cd2d7);	
+	background-image: linear-gradient(125deg, #359db8, #6cd2d7);
 	color: $white;
 	@include container(12);
 	&.bignav {
@@ -104,7 +104,7 @@ nav {
 			h3 {
 				font-size: 22px;
 			}
-			p { 
+			p {
 				margin-top: 5px;
 				font-size: 14px;
 			}
@@ -115,7 +115,7 @@ nav {
 .dropdown {
 	.fa {
 		font-size: 35px;
-		padding: 10px;		
+		padding: 10px;
 	}
 	.dropdown-content{
 		width: 50%;
@@ -178,7 +178,7 @@ main {
 form {
 	input {
 		width: 100%;
-		border-radius: 7px;	
+		border-radius: 7px;
 		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
 		border: solid 2px #5fc5cf;
 		padding: 15px 0;
@@ -365,12 +365,10 @@ form {
 	align-items: center;
 }
 
-.swiper-slide#heart-rate-slide {
-	background: lime;
+.swiper-slide#heartrate-slide {
 }
 
-.swiper-slide#steps-data-slide {
-	background: aqua;
+.swiper-slide#steps-slide {
 }
 
 .fitbit-user-image {
@@ -399,7 +397,7 @@ form {
 			display: block;
 			position: absolute;
 			bottom: 0;
-			text-align: center;	
+			text-align: center;
 		}
 	}
 	&.overview {
@@ -415,6 +413,3 @@ form {
 	@include span(12);
 	text-align: center;
 }
-
-
-

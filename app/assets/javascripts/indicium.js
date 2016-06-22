@@ -108,9 +108,14 @@ $(function() {
   })();
 
   // Creating a new instance of Indicium
-  var instance1 = new Indicium('main');
+  var instance1 = new Indicium('#steps-slide');
   var data = Indicium.fetchData("/steps.json", function(data) {
     instance1.draw(data);
+  });
+
+  var instance2 = new Indicium('#heartrate-slide');
+  var data = Indicium.fetchData("/heartrate.json", function(data) {
+    instance2.draw(data);
   });
 
 });
