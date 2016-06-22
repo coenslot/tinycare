@@ -9,7 +9,7 @@ $(function() {
       }
     }
 
-    var defaultOptions = {
+    let defaultOptions = {
       type: 'graph',
       width: 1500,
       height: 300,
