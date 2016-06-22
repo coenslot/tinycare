@@ -108,14 +108,14 @@ $(function() {
   })();
 
   // Creating a new instance of Indicium
-  var instance1 = new Indicium('#steps-slide');
+  var indicium_steps = new Indicium('#steps-slide');
   var data = Indicium.fetchData("/steps.json", function(data) {
-    instance1.draw(data);
+    indicium_steps.draw(data);
   });
 
-  var instance2 = new Indicium('#heartrate-slide');
+  var indicium_heartrate = new Indicium('#heartrate-slide');
   var data = Indicium.fetchData("/heartrate.json", function(data) {
-    instance2.draw(data);
+    indicium_heartrate.draw(data);
   });
 
 });
