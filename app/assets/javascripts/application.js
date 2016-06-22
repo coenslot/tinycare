@@ -14,11 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$(document).ready(function(){
-	var mySwiper = new Swiper ('.swiper-container', {
-		loop: true,
-		parallax: true,
-		pagination: ".swiper-pagination"
-	});
-})
