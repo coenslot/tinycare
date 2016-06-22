@@ -9,6 +9,8 @@ html, body {
 
 }
 
+
+
 body{
 	font-family: $primary-font;
 	background-color: $white;
@@ -322,6 +324,56 @@ form {
 .profile-dropdowns {
 	margin-top: 15px;
 }
+
+.swiper-wrapper {
+	overflow: hidden;
+	width: 100%;
+	height: 400px;
+	background: lime;
+	#heart-rate-data {
+		background: pink;
+	}
+	#rest-heart-rate-data {
+		background: orange;
+	}
+	#steps-data {
+		background: aqua;
+	}
+}
+
+
+
+
+.swiper-container {
+    width: 320px;
+  overflow:hidden;
+    height: 300px;
+}
+
+.slide1{
+ background:url(http://www.bergoiata.org/fe/mountains/Mt.%20Whitney.jpg) center;
+  background-size:cover;
+  position:relative;
+  z-index:0;
+  padding-bottom:4em;
+}
+.slide2{
+ background:url(http://travellerguidance.com/wp-content/uploads/2013/10/mountains.jpg) center;
+  background-size:cover;
+}
+.slide3{
+ background:url(http://el-buskador.com/galeria/descarga/60-wallpapers_city_of_twilight_tampa_florida_usa) center;
+  background-size:cover;
+}
+.swiper-pagination-bullet{
+  border:2px solid white;
+  opacity:1;
+}
+.swiper-pagination-bullet-active{
+  border-color:transparent;
+  background:orange;
+}
+
 
 .fitbit-users-list {
 	@include container(12);
