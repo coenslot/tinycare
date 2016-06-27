@@ -1,5 +1,6 @@
-<h1>Tiny.<br/>Care</h1>
-
+<div class="logo">
+	<%= image_tag("tinycare.png", width: "175") %>
+</div>
 <div class="form-box">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= f.email_field :email, autofocus: true, placeholder: "E-mail" %>
