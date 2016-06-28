@@ -114,7 +114,7 @@ $(function() {
   });
 
   var indicium_heartrate = new Indicium('#heartrate-slide');
-  var data = Indicium.fetchData("/heartrate.json", function(data) {
+  var data = Indicium.fetchData("/steps.json", function(data) {
     indicium_heartrate.draw(data);
   });
 
