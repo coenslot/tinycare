@@ -24,7 +24,12 @@
 			%nav.bignav
 				.upper-nav
 					.left-part
-						a
+						- unless current_page?(fitbit_api_dashboard_path)
+							= link_to fitbit_api_dashboard_path do
+								%i.fa.fa-arrow-left  
+						- else
+							%span.invisible 
+								invisible
 					.middle-part
 						%h2 Dashboard
 					.right-part
@@ -46,7 +51,8 @@
 			%nav
 				.upper-nav
 					.left-part
-						= link_to fa_icon("arrow-left"), :back
+						%span.invisible 
+							invisible
 					.middle-part
 						%h2 Overzicht
 					.right-part
@@ -56,7 +62,6 @@
 
 		%main
 			= yield
-
 		- if fitbit_user_signed_in?
 			.bottom-menu
 				.menu-item

@@ -68,6 +68,10 @@ p.date {
 .left-part {
 	text-align: left;
 	@include span(3 at 1);
+	.fa {
+		color: $white;
+		font-size: 18px;
+	}
 }
 .middle-part {
 	text-align: center;
@@ -119,7 +123,6 @@ nav {
 .dropdown {
 	.fa {
 		font-size: 35px;
-		padding: 10px;
 	}
 	.dropdown-content{
 		width: 50%;
@@ -342,6 +345,10 @@ form {
 	padding-bottom: 10px;
 	padding-top: 60px;
 	position: relative;
+}
+
+span.invisible {
+	color: rgba(255, 255, 255, 0)
 }
 
 .swiper-container {
