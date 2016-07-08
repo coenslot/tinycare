@@ -9,8 +9,6 @@ html, body {
 
 }
 
-
-
 body{
 	font-family: $primary-font;
 	background-color: $white;
@@ -275,6 +273,9 @@ form {
 	box-sizing: border-box;
 	font-family: $tertiary-font;
 	font-weight: bold;
+	&.notification {
+		background: $attention-red;
+	}
 	&.profile {
 		background: $white;
 		color: $gray;
@@ -311,10 +312,15 @@ form {
 	}
 }
 
+.profile-stats {
+	margin-bottom: 45px;
+}
+
 .profile-button {
 	text-align: center;
 	border-radius: 7px;
-	background-image: linear-gradient(to bottom, #ffffff, #ececec);
+	background: $light-gray;
+	margin-bottom: 12px;
 	p {
 		padding: 20px 0;
 		color: $gray;
