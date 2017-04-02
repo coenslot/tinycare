@@ -1,0 +1,14 @@
+.main-header
+	%h3 Fitbit account toevoegen
+
+.content
+	Het toevoegen van een fitbit account werkt als volgt:
+
+	%p 1. Maak op de Fitbit website (https://www.fitbit.com/login) een gratis account aan voor de nieuwe zorgvrager
+
+	%p 2. Op de onderstaande knop "Zorgvrager toevoegen" kan dit account worden gekoppeld aan #{current_care_giver.email}
+
+	%P 3. Het fitbit account is nu gekoppeld aan #{current_care_giver.email} en verschijnt in het zorgvrager overzicht
+
+.button-area
+	= link_to "Zorgvrager toevoegen", "fitbit_users/auth/fitbit_oauth2", class: "secondary-button center"

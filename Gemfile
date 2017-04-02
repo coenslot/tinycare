@@ -7,11 +7,17 @@ gem 'rails', '>= 5.0.0.beta3', '< 5.1'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma'
+# Use Haml for markup language
+gem "haml-rails", "~> 0.9"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Adding friendly links, just to be nice
 gem 'friendly_id', '~> 5.1.0'
+# Use susy for custom layout
+gem 'susy'
+
+gem 'breakpoint', '~> 2.5'
 # Use font awesome for icons
 gem "font-awesome-rails"
 # Use Uglifier as compressor for JavaScript assets
@@ -46,8 +52,14 @@ gem 'paperclip'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 
+# Register/ sign-up tools for Fitbit
+gem 'omniauth'
+gem 'omniauth-fitbit-oauth2'
+gem 'fitgem_oauth2', '~>1.0.0'
+
 # Authentication gems
 gem 'devise', '>= 4.0.0.rc1'
+
 # Devise Dutch language
 gem 'devise-i18n'
 
@@ -63,6 +75,10 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'factory_girl_rails'
   gem 'faker'
+  # Guard
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'guard-rails', '~> 0.7', require: false
 end
 
 group :development do

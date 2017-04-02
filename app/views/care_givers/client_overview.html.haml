@@ -1,0 +1,21 @@
+.main-header
+	%h3 Zorgvragers
+
+.fitbit-users-list
+	- @fitbits.each do |fitbit_user|
+		= link_to "fitbit_users/auth/fitbit_oauth2" do
+			.fitbit-user-box
+				.fitbit-user-image.overview{:style => "background-image: url(#{fitbit_user.avatar})"}
+				%p
+					= fitbit_user.name
+				%p.date
+					01/01/2001
+				%p.date
+					= fitbit_user.city
+				%p.date
+					= fitbit_user.birth
+.button-area
+	= link_to "Zorgvrager toevoegen", "fitbit_api/add_care_user", class: "secondary-button center"
+
+  
+

@@ -1,0 +1,27 @@
+// Define all the variables here
+
+// Base colors
+$primary-color: #50e3c2;
+$secondary-color: #26b4cd;
+$tertiary-color: #5fc5cf;
+
+
+// Greyscales
+$white: rgba(255, 255, 255, 100);
+$dark-gray: rgba(162, 162, 162, 100);
+$gray: #626262;
+
+
+// Define the typefaces here
+$primary-font: "TeX Gyre Adventor";
+$secondary-font: "Viga";
+$tertiary-font: "Lato";
+
+// Defining default susy settings for mobile devices
+$susy: (
+	columns: 12,
+	gutters: 30px/10px,
+	gutter-position: split,
+);
+
+
