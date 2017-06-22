@@ -1,28 +1,38 @@
-== Tinycare readme
+```
+MMMMMMMMMMMMMMXd,''''''''''''''''''''''''''lKMMMMMMMMMMMMMMMMMMMMMMMMMMWk:''''''''''''''''''''''''''
+MMMMMMMMMMMMMMMMXkc,'''''''''''''''''''''''',lkXMMMMMMMMMMMMMMMMMMMMMMNNWNOo;'''''''''''''''''''''''
+MMMMMMMMMMMMMMMMMMMXxc''''''''''''''''''''''''',lONMMMMMMMMMMMMMMMMW0occldNMNOl,''''''''''''''''''''
+MMMMMMMMMMMMMMMMMMMMMWKx:''''''''''''''''''''''''',lkNMMMMMMMMMMMMWxcccccc0MWWWNkl,'''''''''''''''''
+MMMMMMMMMMMMMMMMMMMWK00XWKd:''''''''''''''''''''''''',lONMMMMMMMMMKccccccl0xollxNMXkc,''''''''''''''
+dKWMMMMMMMMMMMMMMWOlcccckWMW0d;''''''''''''''''''''''''';oONMMMMMM0cccccccccccccOMMMMXxc,'''''''''''
+'':dKWMMMMMMMMMMMOccccccxWNKKXN0o;''''''''''''''''''''''''';o0WMMMNoccccccccccclKMMMMMMMKx:'''''''''
+''''':xXMMMMMMMMMdccccccxdcccckWMNOo,''''''''''''''''''''''''';o0WMNxcccccccclkNMMMMMMMWNNWKd:''''''
+''''''',ckXMMMMMMxcccccccccccclNMMMMNOl,''''''''''''''''''''''''':dKWX0kkkkOKWMMMMMMMKxlccoKMW0d;'''
+'''''''''',cxKWMMKlccccccccccoKMMMMMMMMNOo;''''''''''''''''''''''''':oONMMMMMMMMMMMMOccccccxWWXXN0xc
+'''''''''''''';dKWNkolccclokKWMMMMMMMMMMMMW0d;''''''''''''''''''''''''',lONMMMMMMMMWocccccckxlccl0MM
+''''''''''''''''':dKWWNNNWMMMMMMMMMMMMMMMMMMMW0o;''''''''''''''''''''''''';oOWMMMMMWoccccccccccccoWM
+'''''''''''''''''''':xKWMMMMMMMMMMMMMMMMMMMMMMMMWOo;''''''''''''''''''''''''';o0WMMMOccccccccccclKMM
+'''''''''''''''''''''''cxXMMMMMMMMMMMMMMMMMMMMNK0KNW0o;''''''''''''''''''''''''';d0WW0occcccccoONMMM
+''''''''''''''''''''''''',ckXMMMMMMMMMMMMMMMWkcccccOMMNOo,''''''''''''''''''''''''':dKNXK000KNWMMMMM
+Xxc,'''''''''''''''''''''''',lkNMMMMMMMMMMMWdcccccckWNKKNNOl,''''''''''''''''''''''''':xKMMMMMMMMMMM
+MMMKx:''''''''''''''''''''''''',lONMMMMMMMMKccccccckdccclOMMNkl,'''''''''''''''''''''''',cxXMMMMMMMM
+MMMMMWKd:''''''''''''''''''''''''';o0NMMMMMXcccccccccccccdWMMMMXkc,'''''''''''''''''''''''',ckXMMMMM
+MMMMMMMMW0d;''''''''''''''''''''''''';o0WMMWkcccccccccccoKMMMMMMMMXxc''''''''''''''''''''''''',lkNMM
+MMMMMMX0O0XN0o;''''''''''''''''''''''''';d0WW0occccccldONMMMMMMMMMMMWKx:''''''''''''''''''''''''',lO
+MMMMNxccccc0MMWOo;''''''''''''''''''''''''':dKWXK00KXWMMMMMMMMMMMMMMMMMWKd:'''''''''''''''''''''''''
+MMMWdcccccc0WX0KNNOl,''''''''''''''''''''''''':xKWMMMMMMMMMMMMMMMMMMMMMMMMW0d;''''''''''''''''''''''
+MMMKcccccccxocccl0MMNkl,'''''''''''''''''''''''''cxKWMMMMMMMMMMMMMMMMMMMMWNXNW0o;'''''''''''''''''''
+MMMXccccccccccccckMMMMMXkc,''''''''''''''''''''''''':xXMMMMMMMMMMMMMMMMWOocccdXMNOo,''''''''''''''''
+NMMWOcccccccccccdNMMMMMMMMXxc,'''''''''''''''''''''''',ckXMMMMMMMMMMMMWxcccccc0MWNWNOl,'''''''''''''
+;o0WMKdccccccoxKWMMMMMMNKOOKWKx:''''''''''''''''''''''''',ckXMMMMMMMMMKcccccclOxlclxNMNkl,''''''''''
+''';okXNXXXXNWMMMMMMMNklccccxWMWKxl,'''''''''''''''''''''''',cxKWMMMMM0cccccccccccccOMMMMNOo;'''''''
+'''''',ckXMMMMMMMMMMMkcccccckN0Ok0WNkl,''''''''''''''''''''''''':dKWMMWxcccccccccccdNMMMMMMMW0o;''''
+''''''''',lkNMMMMMMMMdccccccdlccccdWMMXkc,''''''''''''''''''''''''':xXWWOlcccccclx0WMMMMMMMMMMMWOo;'
+'''''''''''',lONMMMMMxccccccccccccoNMMMMMXxc,'''''''''''''''''''''''''cxXWXK00KXWMMMMMMMMMMMMMMMMMNO
+''''''''''''''';oOWMMXoccccccccccdXMMMMMMMMWXx:''''''''''''''''''''''''',ckXMMMMMMMMMMMMMMMMMMMMMMMM
+'''''''''''''''''';o0WWOdlcccldkXWMMMMMMMMMMMMWKd:''''''''''''''''''''''''',lkNMMMMMMMMMMMMMMMMMMMMM
+''''''''''''''''''''';dKWWNNNWMMMMMMMMMMMMMMMMMMMW0x:''''''''''''''''''''''''',lONMMMMMMMMMMMMMMMMMM
+'''''''''''''''''''''''':dKWMMMMMMMMMMMMMMMMMMMMMMMMWKd:''''''''''''''''''''''''';o0WMMMMMMMMMMMMMMM
+'''''''''''''''''''''''''',dWMMMMMMMMMMMMMMMMMMMMMMMMMMNd'''''''''''''''''''''''''''cXMMMMMMMMMMMMMM
+```
 
-Ruby version: 2.3.0
-Rails version: 5.0.0.beta3
-
-If you want you use livereload and use chrome, first install the chrome plugin.
-
-First run this command to get install gems:
-<tt>bundle install</tt>
-
-Then use this command to migrate the database:
-<tt>rails db:migrate</tt>
-
-Then use this command to get a careGiver account:
-<tt>rails db:seed</tt>
-
-Then start the server with guard:
-<tt>bundle exec guard</tt>
-
-When you open the application, click on the right mouseclick and use "inspecteren". Then use <tt>CMD+SHIFT+M</tt> to scale the application to mobile view.
-
-When you logged in, you need to click on "zorgvrager toevoegen". On this page you can add Kevin Etore his fitbit account, by adding his email <tt>info@etore</tt> and his password <tt>ponykamp</tt>.
-
-Now you are able to see your first care user in the application. You can now log in a fitbitsession on this care user and see the data that belongs to this care user!
-
-
-
-Made by Chef
